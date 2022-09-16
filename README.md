@@ -1,4 +1,4 @@
-# on_it_fitness
+# auth_screen
 
 A new Flutter project.
 
