@@ -9,6 +9,9 @@ import 'package:on_it_fitness/constants.dart';
 // Components
 import 'package:on_it_fitness/screens/welcome/components/background.dart';
 
+// Screens
+import '../../login/login_screen.dart';
+
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -43,10 +46,20 @@ class Body extends StatelessWidget {
               height: size.height * 0.45,
             ),
             RoundedButton(
-              size: size,
-              text: 'LOGIN',
-              press: () {},
-            ),
+                size: size,
+                text: 'LOGIN',
+                press: () {
+                  WidgetsBinding.instance.addPostFrameCallback(
+                    (_) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
+                  );
+                }),
             RoundedButton(
               size: size,
               text: 'LOGIN',
